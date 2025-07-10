@@ -22,6 +22,18 @@
       } else {
         document.documentElement.classList.add("light");
       }
+      // Read 'torrent' query parameter and set default value for magnet input
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const torrent = urlParams.get("torrent");
+        if (torrent) {
+          const decodedTorrent = decodeURIComponent(torrent);
+          const magnetInput = document.getElementById("magnet");
+          if (magnetInput) {
+            magnetInput.value = decodedTorrent;
+          }
+        }
+      });
     </script>
   </head>
 
