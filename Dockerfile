@@ -20,6 +20,7 @@ RUN apk --no-cache add ca-certificates
 
 # ARG APP_VERSION, will be set during build by github actions
 ARG APP_VERSION=0.0.0
+LABEL app.version=$APP_VERSION
 
 # Set working directory in final image
 WORKDIR /app
