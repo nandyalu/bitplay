@@ -1,13 +1,14 @@
 name: Docker
 
 on:
-  schedule:
-    - cron: '40 6 * * *'
-  push:
-    branches: [ "main" ]
-    tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:  # Allows manual triggering of the workflow
+  # schedule:
+  #   - cron: '40 6 * * *'
+  # push:
+  #   branches: [ "main" ]
+  #   tags: [ 'v*.*.*' ]
+  # pull_request:
+  #   branches: [ "main" ]
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
