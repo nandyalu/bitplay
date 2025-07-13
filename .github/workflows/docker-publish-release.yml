@@ -1,11 +1,12 @@
 name: Docker Publish for Release
 
 on:
-  push:
-    branches:
-      - 'main'
-    tags:
-      - 'v*'
+  # push:
+  #   branches:
+  #     - 'main'
+  #   tags:
+  #     - 'v*'
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 env:
   REGISTRY: ghcr.io
